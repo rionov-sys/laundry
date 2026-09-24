@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#c0d8e8","surface-container-high":"#1a2438","on-primary-fixed-variant":"#004d73","surface":"#0f1524","on-tertiary-fixed-variant":"#4d2a73","primary-fixed-dim":"#7dd3fc","outline":"#4a6070","on-tertiary-container":"#e8d0ff","on-surface-variant":"#a0b4c4","background":"#0a0e1a","surface-container":"#141c2e","secondary-container":"#1a3a4e","on-tertiary":"#1a002e","inverse-surface":"#e0e8f0","on-primary-fixed":"#001f2e","surface-container-low":"#111828","primary-container":"#0e4d6e","on-primary-container":"#c8eaff","surface-bright":"#1a2438","tertiary-fixed-dim":"#c8a0f0","outline-variant":"#2a3a48","primary-fixed":"#c8eaff","surface-tint":"#7dd3fc","error":"#ff6b6b","surface-container-highest":"#202c42","on-error":"#1a0000","error-container":"#3d1414","on-secondary-fixed":"#0d1f2b","on-secondary-fixed-variant":"#2a4a5e","tertiary-container":"#3d2060","tertiary":"#c8a0f0","on-tertiary-fixed":"#1a002e","on-surface":"#e0e8f0","tertiary-fixed":"#e8d0ff","on-background":"#e0e8f0","secondary-fixed":"#c0d8e8","inverse-primary":"#0a4c6e","inverse-on-surface":"#0a0e1a","secondary-fixed-dim":"#88b4cc","surface-dim":"#0f1524","on-error-container":"#ffb3b3","on-primary":"#001f2e","secondary":"#88b4cc","surface-variant":"#1a2438","primary":"#7dd3fc","surface-container-lowest":"#0a0e1a","on-secondary":"#001f2e"},borderRadius:{"DEFAULT":"0.5rem","lg":"1rem","xl":"1.5rem","full":"9999px"},spacing:{},fontFamily:{headline:["Inter"],display:["Inter"],body:["Inter"],label:["Inter"]},fontSize:{}}}}</script></head><body class="bg-background font-body text-on-surface min-h-screen selection:bg-primary/20 selection:text-primary"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_1px_12px_rgba(0,0,0,0.3)] flex items-center justify-between px-6"><div class="flex items-center gap-4"><div class="flex items-center gap-3"><img alt="Glacier Laundry Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRQyiBgSZfxJ5O37Qvy9vurw8KIocdrI8k7ckqJFTKOaK7pg0c9a8Y1lnyLNn1bmn8Lf0sm49EXla2trlaISn5F71B3OxUgU1DzWuUHNQ4B3GQlhlxaMAdkpiDh_KimImRSZ2V90XSGO_pJlDOeJW6MZmN0idRHtJoFm07uzwAnQvLv5kXwW4RZFH-3My86G2Hzts2Xrj19uZfYRhSVRxERX70EcotldM1x8qIGyZYYAYLx5s9pkwECVg"/><div class="flex flex-col"><span class="text-xs font-headline font-bold tracking-wider text-primary uppercase">Glacier Laundry</span><span class="text-[10px] text-on-surface-variant font-medium tracking-tight">Enterprise Suite v4.2</span></div></div><div class="h-5 w-px bg-surface-container-highest"></div><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container/70 text-on-surface text-xs font-medium"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="text-on-surface">Cabang Sudirman Utama</span><span class="text-[10px] px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-semibold tracking-wide uppercase">Live</span></div></div><div class="flex items-center gap-4"><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-low/60 text-xs text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Server Online</span><span class="text-outline">|</span><span>99.98% Uptime</span></div><div class="hidden md:flex items-center gap-2 text-xs font-mono text-on-surface-variant bg-surface-container-low/40 px-3 py-1 rounded-lg"><span class="material-symbols-outlined text-[15px] text-primary">schedule</span><span>14:32:08 WIB</span></div><button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant text-xs transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="hidden sm:inline">Pencarian global...</span><kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd></button><div class="relative"><button aria-label="Notifikasi pesanan" class="p-2 rounded-lg bg-surface-container/60 hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant transition-colors relative flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button></div><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="text-right hidden lg:block"><div class="text-xs font-medium text-on-surface leading-tight">Bambang Pratama</div><div class="text-[10px] text-primary font-medium">Owner / Admin</div></div><div class="relative ring-1 ring-primary/30 rounded-full p-0.5"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzb3DZYbDlibbHGlvtwaf3E2o7uwQplmXmdMDfrE3cw3FSUXkcru_CPKrSMUXuLi_SgWgaeDLVQoZUVOJKHMQwRBiM6DTPdkLDqvLMBqfnUl46_9ji5-UIBsEnVtJPN_VbwbfudIyCQqaUxiQcC9sXRRsg_88CcAOENcvXqjnmcoOY1-ZHBzUfhOt2CSj6GTGGCvsMfb6rzUrJHtEQ-t4Q9Cxq1TlQNqpcx9NshQJZveTEf4Fm5Vcw"/></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 z-40 bg-surface-container-low/80 backdrop-blur-xl flex flex-col justify-between p-4 shadow-[1px_0_12px_rgba(0,0,0,0.2)]"><div class="space-y-6"><div class="px-3 pt-2"><div class="text-[10px] font-semibold uppercase tracking-wider text-outline">Modul Operasional</div></div><nav class="space-y-1.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-inner"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pos" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Kasir &amp; Transaksi POS</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kanban" href="#"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span>Kanban Produksi &amp; Lacak</span></a><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-inner" data-path="crm" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>CRM &amp; Data Pelanggan</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="finansial" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Laporan Finansial Owner</span></a></nav><div class="pt-4"><div class="px-3 mb-2"><div class="text-[10px] font-semibold uppercase tracking-wider text-outline">Manajemen Cabang</div></div><div class="space-y-1"><a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="outlet-settings" href="#"><span class="material-symbols-outlined text-[18px]">store</span><span>Pengaturan Mesin &amp; Tim</span></a><a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inventory" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Stok Deterjen &amp; Bahan</span></a></div></div></div><div class="p-3 rounded-xl bg-surface-container/60"><div class="flex items-center gap-2 mb-1"><span class="material-symbols-outlined text-[16px] text-primary">cloud_sync</span><span class="text-[11px] font-semibold text-on-surface">Cloud Sync Aktif</span></div><p class="text-[10px] text-on-surface-variant leading-relaxed">Sinkronisasi IoT timbangan &amp; mesin laundry otomatis beroperasi normal.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen bg-background w-full px-8 pb-12"><div class="flex flex-col w-full gap-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="text-[11px] font-mono tracking-widest uppercase text-primary font-semibold">CRM &amp; Loyalty Hub</span>
+<span class="text-outline">/</span>
+<span class="text-xs text-on-surface-variant font-medium">Sudirman Hub Exclusive</span>
+</div>
+<h1 class="text-2xl lg:text-3xl font-headline font-bold text-on-surface tracking-tight">Database Pelanggan &amp; Retensi VIP</h1>
+<p class="text-xs text-on-surface-variant mt-1">Kelola siklus hidup pelanggan, segmentasi preferensi mesin cuci, dan poin reward otomatis.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-xs text-on-surface font-medium transition-all flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-primary">download</span>
+<span>Ekspor CSV</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-fixed text-xs font-semibold text-on-primary transition-all flex items-center gap-2 shadow-lg shadow-primary/20" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Registrasi Member Baru</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<div class="relative overflow-hidden rounded-xl bg-surface-container/70 backdrop-blur-xl p-5 shadow-lg flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-primary/10 blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-medium tracking-wide uppercase text-on-surface-variant">Total Pelanggan Aktif</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-3xl font-bold font-headline text-on-surface tracking-tight">1.428</span>
+<span class="text-[10px] font-semibold text-primary bg-primary-container/60 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>+12%
+            </span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/80 text-primary">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Aktif 30 hari terakhir</span>
+<span class="font-mono text-on-surface font-medium">92% verified</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container/70 backdrop-blur-xl p-5 shadow-lg flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-tertiary/10 blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-medium tracking-wide uppercase text-on-surface-variant">Member VIP / Platinum</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-3xl font-bold font-headline text-on-surface tracking-tight">184</span>
+<span class="text-[10px] font-semibold text-tertiary bg-tertiary-container/60 px-2 py-0.5 rounded-full">Top 13%</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/80 text-tertiary">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Kontribusi Omzet</span>
+<span class="font-mono text-tertiary font-medium">Rp 64.2 Jt</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-2 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container/70 backdrop-blur-xl p-5 shadow-lg flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-primary-container/20 blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-medium tracking-wide uppercase text-on-surface-variant">Poin Loyalitas Beredar</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-3xl font-bold font-headline text-on-surface tracking-tight">45.200</span>
+<span class="text-[10px] font-mono text-on-surface-variant">PTS</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/80 text-primary">
+<span class="material-symbols-outlined text-[22px]">toll</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Est. Beban Reward</span>
+<span class="font-mono text-primary font-medium">Rp 4.52 Jt</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-2 overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style="width: 52%"></div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-container/70 backdrop-blur-xl p-5 shadow-lg flex flex-col justify-between">
+<div class="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-secondary/15 blur-xl pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] font-medium tracking-wide uppercase text-on-surface-variant">Retention Rate (30H)</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-3xl font-bold font-headline text-on-surface tracking-tight">78.4%</span>
+<span class="text-[10px] font-semibold text-primary bg-primary-container/60 px-2 py-0.5 rounded-full">Sehat</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high/80 text-secondary">
+<span class="material-symbols-outlined text-[22px]">repeat</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Churn Risk Level</span>
+<span class="font-mono text-on-surface font-medium">Rendah (4.1%)</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 78.4%"></div>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container/70 backdrop-blur-xl p-4 shadow-md flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+<div class="flex-1 flex flex-col sm:flex-row gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-outline">search</span>
+<input class="w-full bg-surface-container-lowest/80 text-xs text-on-surface placeholder:text-outline rounded-lg pl-10 pr-4 py-2.5 focus:outline-none focus:bg-surface-container-lowest transition-all" id="searchInput" placeholder="Cari Nama, No WA (+62...), Alamat, atau ID Member..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<select class="bg-surface-container-lowest/80 text-xs text-on-surface rounded-lg px-3 py-2.5 focus:outline-none transition-all" id="tierFilter">
+<option value="all">Semua Tier Loyalitas</option>
+<option value="platinum">Platinum (VIP)</option>
+<option value="gold">Gold</option>
+<option value="silver">Silver</option>
+<option value="regular">Member Baru</option>
+</select>
+<select class="bg-surface-container-lowest/80 text-xs text-on-surface rounded-lg px-3 py-2.5 focus:outline-none transition-all" id="sortFilter">
+<option value="ltv-desc">Total LTV Tertinggi</option>
+<option value="points-desc">Poin Terbanyak</option>
+<option value="recent">Kunjungan Terbaru</option>
+</select>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="quick-chip active px-3 py-1.5 rounded-full text-xs font-medium bg-primary-container text-on-primary-container transition-all flex items-center gap-1.5" type="button">
+<span>Semua</span>
+<span class="text-[10px] font-mono px-1 rounded bg-primary/20">1.4k</span>
+</button>
+<button class="quick-chip px-3 py-1.5 rounded-full text-xs font-medium bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>Tidak Aktif &gt;30 Hari</span>
+</button>
+<button class="quick-chip px-3 py-1.5 rounded-full text-xs font-medium bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[14px] text-tertiary">diamond</span>
+<span>Top Spender</span>
+</button>
+<button class="quick-chip px-3 py-1.5 rounded-full text-xs font-medium bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">psychology</span>
+<span>Catatan Khusus</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<div class="xl:col-span-8 flex flex-col gap-4">
+<div class="rounded-xl bg-surface-container/60 backdrop-blur-xl shadow-lg overflow-hidden">
+<div class="px-5 py-4 bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">table_rows</span>
+<span class="text-xs font-bold font-headline uppercase tracking-wider text-on-surface">Data Member Terdaftar</span>
+<span class="text-[11px] text-on-surface-variant font-mono">(Menampilkan 4 dari 1.428)</span>
+</div>
+<div class="text-[11px] text-on-surface-variant flex items-center gap-1">
+<span>Klik baris untuk membuka panel detail</span>
+<span class="material-symbols-outlined text-[14px]">touch_app</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-[10px] font-semibold text-outline uppercase tracking-wider bg-surface-container-lowest/40">
+<th class="py-3 px-4">Profil &amp; Nama</th>
+<th class="py-3 px-4">WhatsApp Verifikasi</th>
+<th class="py-3 px-4">Tier Status</th>
+<th class="py-3 px-4 text-right">Poin</th>
+<th class="py-3 px-4 text-right">Lifetime Value (LTV)</th>
+<th class="py-3 px-4">Kunjungan Terakhir</th>
+<th class="py-3 px-4">Instruksi Khusus</th>
+</tr>
+</thead>
+<tbody class="text-xs" id="customerTableBody">
+<tr class="customer-row bg-surface-container/30 hover:bg-surface-container-high/70 transition-colors cursor-pointer group" data-customer="henny">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Close up portrait photograph of an elegant middle-aged Indonesian woman with warm gentle smile and tied hair wearing modest navy attire against a soft minimalist backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiFDB07cK6zazlPlu947Dl-UNWzp1K8bMn_0R9HQ1TCHHGxnxAh1NgRBKDYJJme43DaqzBi2mWa72LY8slxRxCSIVMCy9iclbzXNnzFIMBC4nM-TwIFrL05dMHCH6nVs8nPXQKBxq9vvNhxhVdXskdk-kX42hhBhkAykaR0BUahxEG9fzLE-Z4QR7PQ-pR7XSWpZScUYZcCkvBFzNHUtc4GYUQe87w8oMvm9QUMorv09RW6Y7DhbzR"/>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center gap-1.5">
+<span>Ibu Henny Kusuma</span>
+<span class="material-symbols-outlined text-primary text-[14px]" title="Priority VIP">verified</span>
+</div>
+<span class="text-[10px] font-mono text-on-surface-variant">ID: GLC-9821</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-[11px] text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/6281299887711" target="_blank">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-mono">+62 812-9988-7711</span>
+</a>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-gradient-to-r from-slate-200 via-sky-200 to-slate-300 text-slate-900 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+<span>Platinum VIP</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-semibold text-primary">
+                  1.250 <span class="text-[9px] text-on-surface-variant">pts</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-bold text-on-surface">
+                  Rp 4.850.000
+                </td>
+<td class="py-3.5 px-4">
+<span class="text-on-surface-variant font-medium">2 hari lalu</span>
+<div class="text-[10px] text-outline font-mono">14 Nov, 11:20</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<div class="flex items-center gap-1 text-[11px] text-primary bg-primary/10 px-2 py-1 rounded truncate">
+<span class="material-symbols-outlined text-[14px] shrink-0">child_care</span>
+<span class="truncate">Deterjen ramah bayi, jangan campur putih</span>
+</div>
+</td>
+</tr>
+<tr class="customer-row bg-surface-container/10 hover:bg-surface-container-high/70 transition-colors cursor-pointer group" data-customer="adrian">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Professional studio portrait photograph of a confident young Asian male medical doctor in stylish clean blazer soft rim lighting dark moody office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAKTTh_XlAJkZ2tGwXF7BCX2cPx7-ggmfdyDOnLX2ZU_Hys2epVH3bKJPRiUrkd_9RPq4UJeTChDZFgCFUC6PtUaokjqiAWGmZCMBGOPAqiiIjN6063VTjcNj_JDV7sgNm1rnMbw_I7vyez0UW7TnpX_TDgOGAZwpQLtmkwGx0AgwrZtEZg8qW02JsymeoSD1Jvf3yyqLnQo4T1wnuVWp9CkISU0k7GSJqXenjmUdwDJxbVEEvqzYG"/>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors">Dr. Adrian Halim</div>
+<span class="text-[10px] font-mono text-on-surface-variant">ID: GLC-6542</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-[11px] text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/6281788223344" target="_blank">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-mono">+62 817-8822-3344</span>
+</a>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 text-amber-950 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">stars</span>
+<span>Gold Elite</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-semibold text-primary">
+                  620 <span class="text-[9px] text-on-surface-variant">pts</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-bold text-on-surface">
+                  Rp 2.300.000
+                </td>
+<td class="py-3.5 px-4">
+<span class="text-on-surface-variant font-medium">5 hari lalu</span>
+<div class="text-[10px] text-outline font-mono">11 Nov, 16:45</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<div class="flex items-center gap-1 text-[11px] text-tertiary bg-tertiary/10 px-2 py-1 rounded truncate">
+<span class="material-symbols-outlined text-[14px] shrink-0">dry_cleaning</span>
+<span class="truncate">Setrika uap licin, jas hanger kayu premium</span>
+</div>
+</td>
+</tr>
+<tr class="customer-row bg-surface-container/30 hover:bg-surface-container-high/70 transition-colors cursor-pointer group" data-customer="anissa">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait headshot photo of a modern Southeast Asian woman creative professional wearing warm turtleneck aesthetic soft lighting in ice-blue studio ambience" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi4uur3ZN4fc6YMtVM-Qt5hMlRPhpEFyliO-fUC38GuAW8n4aDf5sI5qBT58enz4L0nxIt375w10EsDl2HqK0RtXn-ZCg5F1rhN4gbFvN4dVMX2D_Q9IRfGZ26QyDQR9h_C2LyJaIlXbZ4EdyYpsaqKfU9UtKYom-zf6kxN6a5G9HaaH6thhyDODluSwASE1dsr16U3FDoBYHYtn0nRx-KXPi1hG5Z_1QSWGxbrvKdGzqM4RjG0H5i"/>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors">Anissa Putri</div>
+<span class="text-[10px] font-mono text-on-surface-variant">ID: GLC-3301</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-[11px] text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/6285644112233" target="_blank">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-mono">+62 856-4411-2233</span>
+</a>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-gradient-to-r from-slate-300 via-gray-200 to-zinc-400 text-zinc-900 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+<span>Silver Member</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-semibold text-primary">
+                  180 <span class="text-[9px] text-on-surface-variant">pts</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-bold text-on-surface">
+                  Rp 850.000
+                </td>
+<td class="py-3.5 px-4">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    Hari ini
+                  </span>
+<div class="text-[10px] text-outline font-mono">16 Nov, 09:15</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<div class="flex items-center gap-1 text-[11px] text-secondary bg-secondary/10 px-2 py-1 rounded truncate">
+<span class="material-symbols-outlined text-[14px] shrink-0">local_florist</span>
+<span class="truncate">Aroma vanilla blossom ekstra kuat</span>
+</div>
+</td>
+</tr>
+<tr class="customer-row bg-surface-container/10 hover:bg-surface-container-high/70 transition-colors cursor-pointer group" data-customer="budi">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-xs text-on-surface-variant">
+                      BS
+                    </div>
+<div class="min-w-0">
+<div class="font-semibold text-on-surface group-hover:text-primary transition-colors">Budi Santoso</div>
+<span class="text-[10px] font-mono text-on-surface-variant">ID: GLC-1094</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-[11px] text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/6287711229988" target="_blank">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="font-mono">+62 877-1122-9988</span>
+</a>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wide uppercase bg-surface-container-high text-on-surface-variant">
+<span>Member Baru</span>
+</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-semibold text-on-surface-variant">
+                  50 <span class="text-[9px]">pts</span>
+</td>
+<td class="py-3.5 px-4 text-right font-mono font-bold text-on-surface">
+                  Rp 120.000
+                </td>
+<td class="py-3.5 px-4">
+<span class="text-on-surface-variant font-medium">1 minggu lalu</span>
+<div class="text-[10px] text-outline font-mono">08 Nov, 14:02</div>
+</td>
+<td class="py-3.5 px-4 max-w-xs">
+<span class="text-[11px] text-outline italic">Belum ada catatan preferensi</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-5 py-3 bg-surface-container-low flex items-center justify-between text-xs text-on-surface-variant">
+<div>Menampilkan 1 - 4 dari 1.428 entri</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors disabled:opacity-40" disabled="">Sebelumnya</button>
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-semibold">1</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors">2</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors">3</button>
+<span class="px-1">...</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors">119</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors">Berikutnya</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="rounded-xl bg-surface-container/60 backdrop-blur-xl p-4 shadow-sm flex items-start gap-4">
+<div class="p-3 rounded-lg bg-primary-container/40 text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">campaign</span>
+</div>
+<div class="min-w-0">
+<span class="text-xs font-bold text-on-surface uppercase tracking-wide">Automasi WhatsApp AI</span>
+<p class="text-xs text-on-surface-variant mt-0.5">34 Pelanggan berpeluang churn minggu ini telah menerima kupon diskon 15% otomatis via Cloud API.</p>
+<button class="mt-2.5 text-xs text-primary font-semibold hover:underline flex items-center gap-1">
+<span>Buka Konfigurasi Trigger</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container/60 backdrop-blur-xl p-4 shadow-sm flex items-start gap-4">
+<div class="p-3 rounded-lg bg-tertiary-container/40 text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[24px]">card_membership</span>
+</div>
+<div class="min-w-0">
+<span class="text-xs font-bold text-on-surface uppercase tracking-wide">Tier Upgrade Alert</span>
+<p class="text-xs text-on-surface-variant mt-0.5">8 Member Silver selangkah lagi menuju Gold (Spend &gt; Rp 1.5 Juta). Kirim sapaan apresiasi langsung.</p>
+<button class="mt-2.5 text-xs text-tertiary font-semibold hover:underline flex items-center gap-1">
+<span>Tinjau Member Terkait</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col gap-5 sticky top-20">
+<div class="rounded-2xl bg-surface-container/80 backdrop-blur-2xl p-6 shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface">Glacier Digital Member Card</span>
+</div>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-semibold">Active NFC/QR</span>
+</div>
+<div class="mt-3 relative rounded-xl p-5 overflow-hidden shadow-2xl bg-gradient-to-br from-slate-900 via-secondary-container/80 to-surface-container-highest">
+<div class="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-primary/20 blur-2xl"></div>
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-mono uppercase tracking-widest text-primary">Glacier Platinum Pass</span>
+<h2 class="text-lg font-bold font-headline text-on-surface tracking-tight mt-0.5" id="cardMemberName">Ibu Henny Kusuma</h2>
+<span class="text-[10px] font-mono text-on-surface-variant" id="cardMemberId">MEMBER ID: GLC-9821-2024</span>
+</div>
+<div class="p-2 rounded-lg bg-background/80 shadow-inner">
+<svg class="w-12 h-12 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<rect height="28" rx="4" width="28" x="0" y="0"></rect>
+<rect fill="#0a0e1a" height="16" width="16" x="6" y="6"></rect>
+<rect height="8" rx="1" width="8" x="10" y="10"></rect>
+<rect height="28" rx="4" width="28" x="72" y="0"></rect>
+<rect fill="#0a0e1a" height="16" width="16" x="78" y="6"></rect>
+<rect height="8" rx="1" width="8" x="82" y="10"></rect>
+<rect height="28" rx="4" width="28" x="0" y="72"></rect>
+<rect fill="#0a0e1a" height="16" width="16" x="6" y="78"></rect>
+<rect height="8" rx="1" width="8" x="10" y="82"></rect>
+<rect height="10" width="10" x="36" y="10"></rect>
+<rect height="8" width="10" x="52" y="18"></rect>
+<rect height="26" rx="3" width="26" x="36" y="36"></rect>
+<rect fill="#0a0e1a" height="14" width="14" x="42" y="42"></rect>
+<rect height="18" width="8" x="72" y="44"></rect>
+<rect height="8" width="12" x="84" y="38"></rect>
+<rect height="10" width="10" x="72" y="72"></rect>
+<rect height="24" width="10" x="88" y="72"></rect>
+<rect height="14" width="12" x="36" y="72"></rect>
+<rect height="12" width="12" x="54" y="82"></rect>
+</svg>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-end justify-between">
+<div>
+<div class="text-[9px] uppercase tracking-wider text-outline">Poin Tersedia</div>
+<div class="text-2xl font-bold font-headline text-primary tracking-tight" id="cardMemberPoints">1.250 <span class="text-xs font-normal text-on-surface-variant">PTS</span></div>
+</div>
+<div class="text-right">
+<span class="text-[9px] uppercase tracking-wider text-outline">Tier Status</span>
+<div class="text-xs font-semibold text-on-surface flex items-center gap-1 justify-end" id="cardMemberTierBadge">
+<span class="material-symbols-outlined text-[14px] text-primary">military_tech</span>
+<span>Platinum VIP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-5 space-y-2">
+<div class="text-[10px] font-semibold uppercase tracking-wider text-outline">Aksi Langsung Pelanggan</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+<button class="p-2.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-left transition-all group" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:scale-110 transition-transform">sms</span>
+<div class="text-[11px] font-semibold text-on-surface mt-1 leading-tight">WA Promo</div>
+<div class="text-[9px] text-on-surface-variant">Template kangen</div>
+</button>
+<button class="p-2.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-left transition-all group" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary group-hover:scale-110 transition-transform">currency_exchange</span>
+<div class="text-[11px] font-semibold text-on-surface mt-1 leading-tight">Tukar Poin</div>
+<div class="text-[9px] text-on-surface-variant">Klaim voucher</div>
+</button>
+<button class="p-2.5 rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-left transition-all group" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:scale-110 transition-transform">edit_note</span>
+<div class="text-[11px] font-semibold text-on-surface mt-1 leading-tight">Catatan</div>
+<div class="text-[9px] text-on-surface-variant">Update alergi</div>
+</button>
+</div>
+</div>
+<div class="mt-6 pt-5 bg-surface-container-low/50 -mx-6 px-6 pb-2">
+<div class="flex items-center justify-between mb-3">
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface">5 Transaksi Terakhir</span>
+<span class="text-[10px] text-primary hover:underline cursor-pointer">Lihat Semua</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-2.5 rounded-lg bg-surface-container/70 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-primary-container/40 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">local_laundry_service</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Bed Cover King &amp; 8kg Cuci Lipat</div>
+<div class="text-[10px] font-mono text-outline">14 Nov 2024 • INV-2411-0982</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<div class="text-xs font-bold font-mono text-on-surface">Rp 145.000</div>
+<div class="text-[9px] text-primary font-medium">+15 Poin</div>
+</div>
+<button aria-label="Download PDF Invoice" class="p-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+</button>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/70 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-secondary-container/40 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">dry_cleaning</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Dry Clean Gaun Sutra &amp; Jas</div>
+<div class="text-[10px] font-mono text-outline">02 Nov 2024 • INV-2411-0412</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<div class="text-xs font-bold font-mono text-on-surface">Rp 320.000</div>
+<div class="text-[9px] text-primary font-medium">+32 Poin</div>
+</div>
+<button aria-label="Download PDF Invoice" class="p-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+</button>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/70 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-primary-container/40 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">iron</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Express Setrika Uap 10kg</div>
+<div class="text-[10px] font-mono text-outline">26 Okt 2024 • INV-2410-8819</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<div class="text-xs font-bold font-mono text-on-surface">Rp 120.000</div>
+<div class="text-[9px] text-primary font-medium">+12 Poin</div>
+</div>
+<button aria-label="Download PDF Invoice" class="p-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+</button>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/70 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-primary-container/40 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">local_laundry_service</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Cuci Kering Lipat 15kg</div>
+<div class="text-[10px] font-mono text-outline">15 Okt 2024 • INV-2410-6721</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<div class="text-xs font-bold font-mono text-on-surface">Rp 150.000</div>
+<div class="text-[9px] text-primary font-medium">+15 Poin</div>
+</div>
+<button aria-label="Download PDF Invoice" class="p-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+</button>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container/70 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded bg-tertiary-container/40 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">redeem</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Redeem Voucher Diskon Rp 50k</div>
+<div class="text-[10px] font-mono text-outline">05 Okt 2024 • RDM-2410-0012</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<div class="text-xs font-bold font-mono text-tertiary">- Rp 50.000</div>
+<div class="text-[9px] text-error font-medium">-500 Poin</div>
+</div>
+<button aria-label="Download PDF Invoice" class="p-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">picture_as_pdf</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initCRMModule() {
+    const customerData = {
+      henny: {
+        name: 'Ibu Henny Kusuma',
+        id: 'GLC-9821-2024',
+        points: '1.250',
+        tier: 'Platinum VIP',
+        tierIcon: 'military_tech'
+      },
+      adrian: {
+        name: 'Dr. Adrian Halim',
+        id: 'GLC-6542-2024',
+        points: '620',
+        tier: 'Gold Elite',
+        tierIcon: 'stars'
+      },
+      anissa: {
+        name: 'Anissa Putri',
+        id: 'GLC-3301-2024',
+        points: '180',
+        tier: 'Silver Member',
+        tierIcon: 'shield'
+      },
+      budi: {
+        name: 'Budi Santoso',
+        id: 'GLC-1094-2024',
+        points: '50',
+        tier: 'Member Baru',
+        tierIcon: 'person'
+      }
+    };
+
+    const rows = document.querySelectorAll('.customer-row');
+    const nameEl = document.getElementById('cardMemberName');
+    const idEl = document.getElementById('cardMemberId');
+    const ptsEl = document.getElementById('cardMemberPoints');
+    const badgeEl = document.getElementById('cardMemberTierBadge');
+
+    rows.forEach(row => {
+      row.addEventListener('click', () => {
+        rows.forEach(r => r.classList.remove('bg-surface-container-high/90'));
+        row.classList.add('bg-surface-container-high/90');
+        const key = row.getAttribute('data-customer');
+        const c = customerData[key];
+        if (c && nameEl && idEl && ptsEl && badgeEl) {
+          nameEl.textContent = c.name;
+          idEl.textContent = 'MEMBER ID: ' + c.id;
+          ptsEl.innerHTML = c.points + ' <span class="text-xs font-normal text-on-surface-variant">PTS</span>';
+          badgeEl.innerHTML = '<span class="material-symbols-outlined text-[14px] text-primary">' + c.tierIcon + '</span><span>' + c.tier + '</span>';
+        }
+      });
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
+
+    const quickChips = document.querySelectorAll('.quick-chip');
+    quickChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        quickChips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary-container');
+          c.classList.add('bg-surface-container-high/80', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary-container', 'text-on-primary-container');
+        chip.classList.remove('bg-surface-container-high/80', 'text-on-surface-variant');
+      });
+    });
+  })();
+</script></main></div></body></html>

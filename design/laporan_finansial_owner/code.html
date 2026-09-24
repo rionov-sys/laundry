@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#c0d8e8","surface-container-high":"#1a2438","on-primary-fixed-variant":"#004d73","surface":"#0f1524","on-tertiary-fixed-variant":"#4d2a73","primary-fixed-dim":"#7dd3fc","outline":"#4a6070","on-tertiary-container":"#e8d0ff","on-surface-variant":"#a0b4c4","background":"#0a0e1a","surface-container":"#141c2e","secondary-container":"#1a3a4e","on-tertiary":"#1a002e","inverse-surface":"#e0e8f0","on-primary-fixed":"#001f2e","surface-container-low":"#111828","primary-container":"#0e4d6e","on-primary-container":"#c8eaff","surface-bright":"#1a2438","tertiary-fixed-dim":"#c8a0f0","outline-variant":"#2a3a48","primary-fixed":"#c8eaff","surface-tint":"#7dd3fc","error":"#ff6b6b","surface-container-highest":"#202c42","on-error":"#1a0000","error-container":"#3d1414","on-secondary-fixed":"#0d1f2b","on-secondary-fixed-variant":"#2a4a5e","tertiary-container":"#3d2060","tertiary":"#c8a0f0","on-tertiary-fixed":"#1a002e","on-surface":"#e0e8f0","tertiary-fixed":"#e8d0ff","on-background":"#e0e8f0","secondary-fixed":"#c0d8e8","inverse-primary":"#0a4c6e","inverse-on-surface":"#0a0e1a","secondary-fixed-dim":"#88b4cc","surface-dim":"#0f1524","on-error-container":"#ffb3b3","on-primary":"#001f2e","secondary":"#88b4cc","surface-variant":"#1a2438","primary":"#7dd3fc","surface-container-lowest":"#0a0e1a","on-secondary":"#001f2e"},borderRadius:{"DEFAULT":"0.5rem","lg":"1rem","xl":"1.5rem","full":"9999px"},spacing:{},fontFamily:{headline:["Inter"],display:["Inter"],body:["Inter"],label:["Inter"]},fontSize:{}}}}</script></head><body class="bg-background font-body text-on-surface min-h-screen selection:bg-primary/20 selection:text-primary"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/75 backdrop-blur-2xl shadow-[0_1px_12px_rgba(0,0,0,0.3)] flex items-center justify-between px-6"><div class="flex items-center gap-4"><div class="flex items-center gap-3"><img alt="Glacier Laundry Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VRQyiBgSZfxJ5O37Qvy9vurw8KIocdrI8k7ckqJFTKOaK7pg0c9a8Y1lnyLNn1bmn8Lf0sm49EXla2trlaISn5F71B3OxUgU1DzWuUHNQ4B3GQlhlxaMAdkpiDh_KimImRSZ2V90XSGO_pJlDOeJW6MZmN0idRHtJoFm07uzwAnQvLv5kXwW4RZFH-3My86G2Hzts2Xrj19uZfYRhSVRxERX70EcotldM1x8qIGyZYYAYLx5s9pkwECVg"/><div class="flex flex-col"><span class="text-xs font-headline font-bold tracking-wider text-primary uppercase">Glacier Laundry</span><span class="text-[10px] text-on-surface-variant font-medium tracking-tight">Enterprise Suite v4.2</span></div></div><div class="h-5 w-px bg-surface-container-highest"></div><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container/70 text-on-surface text-xs font-medium"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="text-on-surface">Cabang Sudirman Utama</span><span class="text-[10px] px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-semibold tracking-wide uppercase">Live</span></div></div><div class="flex items-center gap-4"><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-low/60 text-xs text-on-surface-variant"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Server Online</span><span class="text-outline">|</span><span>99.98% Uptime</span></div><div class="hidden md:flex items-center gap-2 text-xs font-mono text-on-surface-variant bg-surface-container-low/40 px-3 py-1 rounded-lg"><span class="material-symbols-outlined text-[15px] text-primary">schedule</span><span>14:32:08 WIB</span></div><button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container/60 hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant text-xs transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="hidden sm:inline">Pencarian global...</span><kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd></button><div class="relative"><button aria-label="Notifikasi pesanan" class="p-2 rounded-lg bg-surface-container/60 hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant transition-colors relative flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button></div><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-3 pl-1"><div class="text-right hidden lg:block"><div class="text-xs font-medium text-on-surface leading-tight">Bambang Pratama</div><div class="text-[10px] text-primary font-medium">Owner / Admin</div></div><div class="relative ring-1 ring-primary/30 rounded-full p-0.5"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzb3DZYbDlibbHGlvtwaf3E2o7uwQplmXmdMDfrE3cw3FSUXkcru_CPKrSMUXuLi_SgWgaeDLVQoZUVOJKHMQwRBiM6DTPdkLDqvLMBqfnUl46_9ji5-UIBsEnVtJPN_VbwbfudIyCQqaUxiQcC9sXRRsg_88CcAOENcvXqjnmcoOY1-ZHBzUfhOt2CSj6GTGGCvsMfb6rzUrJHtEQ-t4Q9Cxq1TlQNqpcx9NshQJZveTEf4Fm5Vcw"/></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 z-40 bg-surface-container-low/80 backdrop-blur-xl flex flex-col justify-between p-4 shadow-[1px_0_12px_rgba(0,0,0,0.2)]"><div class="space-y-6"><div class="px-3 pt-2"><div class="text-[10px] font-semibold uppercase tracking-wider text-outline">Modul Operasional</div></div><nav class="space-y-1.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-inner"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pos" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Kasir &amp; Transaksi POS</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kanban" href="#"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span>Kanban Produksi &amp; Lacak</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="crm" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>CRM &amp; Data Pelanggan</span></a><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-inner" data-path="finansial" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Laporan Finansial Owner</span></a></nav><div class="pt-4"><div class="px-3 mb-2"><div class="text-[10px] font-semibold uppercase tracking-wider text-outline">Manajemen Cabang</div></div><div class="space-y-1"><a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="outlet-settings" href="#"><span class="material-symbols-outlined text-[18px]">store</span><span>Pengaturan Mesin &amp; Tim</span></a><a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inventory" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>Stok Deterjen &amp; Bahan</span></a></div></div></div><div class="p-3 rounded-xl bg-surface-container/60"><div class="flex items-center gap-2 mb-1"><span class="material-symbols-outlined text-[16px] text-primary">cloud_sync</span><span class="text-[11px] font-semibold text-on-surface">Cloud Sync Aktif</span></div><p class="text-[10px] text-on-surface-variant leading-relaxed">Sinkronisasi IoT timbangan &amp; mesin laundry otomatis beroperasi normal.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen bg-background w-full px-8 pb-12"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-8 pb-10">
+<div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-surface-container/60 backdrop-blur-xl shadow-lg">
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex p-1 rounded-lg bg-surface-container-high/80">
+<button class="px-3 py-1.5 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" type="button">Hari Ini</button>
+<button class="px-3 py-1.5 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" type="button">7 Hari Terakhir</button>
+<button class="px-3.5 py-1.5 rounded text-xs font-semibold bg-primary-container text-on-primary-container shadow-sm" type="button">Bulan Ini (Mei 2025)</button>
+<button class="px-3 py-1.5 rounded text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span>Custom</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</button>
+</div>
+<div class="relative">
+<select class="appearance-none pl-3 pr-8 py-1.5 rounded-lg text-xs font-medium bg-surface-container-high/80 text-on-surface focus:outline-none cursor-pointer">
+<option>Cabang Sudirman Utama (Live)</option>
+<option>Semua Cabang (Sudirman, Thamrin, Kuningan)</option>
+<option>Cabang Thamrin Plaza</option>
+<option>Cabang Kuningan Hub</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-medium transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">table_view</span>
+<span>Unduh Excel</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-xs font-medium transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">picture_as_pdf</span>
+<span>Ekspor PDF</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary text-xs font-semibold transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Rekonsiliasi Kas</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="relative overflow-hidden p-5 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Total Omzet Bruto</span>
+<div class="p-2 rounded-lg bg-primary-container/40 text-primary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div>
+<div class="text-2xl font-bold tracking-tight text-on-surface">Rp 48.750.000</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="flex items-center text-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+              +14.2%
+            </span>
+<span class="text-[11px] text-on-surface-variant font-mono">MoM vs Apr 2025</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>Target Mei: 85% tercapai</span>
+<span class="font-mono text-on-surface">Rp 57.0M</span>
+</div>
+</div>
+<div class="relative overflow-hidden p-5 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-medium text-on-surface-variant uppercase tracking-wider">Beban Operasional</span>
+<div class="p-2 rounded-lg bg-secondary-container/50 text-secondary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div>
+<div class="text-2xl font-bold tracking-tight text-on-surface">Rp 18.200.000</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-xs font-semibold text-on-surface-variant font-mono">Bahan + Listrik + Gaji + Sewa</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant">Rasio Biaya</span>
+<span class="font-mono font-medium text-secondary">37.4% dari omzet</span>
+</div>
+</div>
+<div class="relative overflow-hidden p-5 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-medium text-primary uppercase tracking-wider">Estimasi Laba Bersih</span>
+<div class="p-2 rounded-lg bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+</div>
+</div>
+<div>
+<div class="text-2xl font-bold tracking-tight text-primary">Rp 30.550.000</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-bold bg-primary/20 text-primary">Margin 62.6%</span>
+<span class="text-[11px] text-on-surface-variant font-mono">Sangat Sehat</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px] text-on-surface-variant">
+<span>EBITDA Margin</span>
+<span class="font-mono text-primary font-semibold">66.1%</span>
+</div>
+</div>
+<div class="relative overflow-hidden p-5 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-medium text-error uppercase tracking-wider">Piutang Belum Lunas</span>
+<div class="p-2 rounded-lg bg-error-container/60 text-error">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+</div>
+<div>
+<div class="text-2xl font-bold tracking-tight text-on-surface">Rp 2.450.000</div>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="text-xs font-semibold text-error">18 Nota Transaksi</span>
+<span class="text-[11px] text-on-surface-variant font-mono">Kemitraan &amp; COD</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-[11px]">
+<a class="text-primary hover:underline flex items-center gap-1" href="#">
+<span>Kirim Reminder WA</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</a>
+<span class="text-[10px] text-on-surface-variant font-mono">Max 7 hari</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-8 p-6 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="text-base font-bold text-on-surface tracking-tight">Tren Pemasukan vs Pengeluaran Harian</h2>
+<p class="text-xs text-on-surface-variant mt-0.5">Analisis arus kas harian siklus Mei 2025 (Rata-rata omzet Rp 1.57M/hari)</p>
+</div>
+<div class="flex items-center gap-4 text-xs font-medium">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-primary"></span>
+<span class="text-on-surface">Pemasukan</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-secondary"></span>
+<span class="text-on-surface-variant">Beban/Expense</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-0.5 bg-tertiary"></span>
+<span class="text-tertiary">Net Margin</span>
+</div>
+</div>
+</div>
+<div class="w-full h-64 relative flex flex-col justify-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 220">
+<defs>
+<lineargradient id="primaryGlow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#7dd3fc" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<line stroke="#202c42" stroke-width="1" x1="0" x2="700" y1="180" y2="180"></line>
+<line stroke="#202c42" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="120" y2="120"></line>
+<line stroke="#202c42" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="60" y2="60"></line>
+<g fill="#202c42" opacity="0.6">
+<rect fill="#88b4cc" height="50" rx="3" width="18" x="25" y="130"></rect>
+<rect fill="#88b4cc" height="65" rx="3" width="18" x="75" y="115"></rect>
+<rect fill="#88b4cc" height="40" rx="3" width="18" x="125" y="140"></rect>
+<rect fill="#88b4cc" height="70" rx="3" width="18" x="175" y="110"></rect>
+<rect fill="#88b4cc" height="80" rx="3" width="18" x="225" y="100"></rect>
+<rect fill="#88b4cc" height="45" rx="3" width="18" x="275" y="135"></rect>
+<rect fill="#88b4cc" height="90" rx="3" width="18" x="325" y="90"></rect>
+<rect fill="#88b4cc" height="55" rx="3" width="18" x="375" y="125"></rect>
+<rect fill="#88b4cc" height="40" rx="3" width="18" x="425" y="140"></rect>
+<rect fill="#88b4cc" height="75" rx="3" width="18" x="475" y="105"></rect>
+<rect fill="#88b4cc" height="95" rx="3" width="18" x="525" y="85"></rect>
+<rect fill="#88b4cc" height="50" rx="3" width="18" x="575" y="130"></rect>
+<rect fill="#88b4cc" height="105" rx="3" width="18" x="625" y="75"></rect>
+<rect fill="#88b4cc" height="60" rx="3" width="18" x="665" y="120"></rect>
+</g>
+<path d="M 25 180 L 25 75 Q 75 40 125 90 T 225 35 T 325 50 T 425 80 T 525 25 T 625 15 L 665 40 L 665 180 Z" fill="url(#primaryGlow)"></path>
+<path d="M 25 75 Q 75 40 125 90 T 225 35 T 325 50 T 425 80 T 525 25 T 625 15 L 665 40" fill="none" stroke="#7dd3fc" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="225" cy="35" fill="#7dd3fc" r="4.5"></circle>
+<circle cx="525" cy="25" fill="#7dd3fc" r="4.5"></circle>
+<circle cx="625" cy="15" fill="#e8d0ff" r="5"></circle>
+</svg>
+<div class="flex justify-between items-center text-[10px] font-mono text-on-surface-variant pt-2">
+<span>01 Mei</span>
+<span>05 Mei</span>
+<span>10 Mei</span>
+<span>15 Mei</span>
+<span>20 Mei</span>
+<span>25 Mei</span>
+<span>31 Mei (Hari Ini)</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-3 mt-6 pt-4 border-t border-surface-container-highest">
+<div class="p-3 rounded-lg bg-surface-container-low/70">
+<span class="text-[10px] text-on-surface-variant block uppercase font-mono">Hari Tertinggi</span>
+<span class="text-sm font-bold text-on-surface">Sabtu, 24 Mei</span>
+<span class="text-xs text-primary font-mono block">Rp 2.890.000</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low/70">
+<span class="text-[10px] text-on-surface-variant block uppercase font-mono">Beban Terbesar</span>
+<span class="text-sm font-bold text-on-surface">Gaji Operator &amp; Listrik</span>
+<span class="text-xs text-secondary font-mono block">Rp 7.450.000 (Tgl 25)</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low/70">
+<span class="text-[10px] text-on-surface-variant block uppercase font-mono">Efisiensi Bahan</span>
+<span class="text-sm font-bold text-on-surface">94.2% Optimal</span>
+<span class="text-xs text-tertiary font-mono block">+3.1% dari target</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 p-6 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-base font-bold text-on-surface tracking-tight">Komposisi Layanan</h2>
+<span class="text-[11px] text-on-surface-variant font-mono">5 Kategori</span>
+</div>
+<div class="flex items-center justify-center my-4 relative">
+<svg class="w-44 h-44 -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#1a2438" stroke-width="12"></circle>
+<!-- Kiloan Reguler 44% (C = 238.76 -> 105.0) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#7dd3fc" stroke-dasharray="105.0 238.76" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Kiloan Express 28% (66.85) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#0e4d6e" stroke-dasharray="66.85 238.76" stroke-dashoffset="-105.0" stroke-width="12"></circle>
+<!-- Bedcover & Karpet 15% (35.81) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#c8a0f0" stroke-dasharray="35.81 238.76" stroke-dashoffset="-171.85" stroke-width="12"></circle>
+<!-- Sepatu & Tas 8% (19.1) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#88b4cc" stroke-dasharray="19.1 238.76" stroke-dashoffset="-207.66" stroke-width="12"></circle>
+<!-- Dry Clean 5% (11.94) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#e8d0ff" stroke-dasharray="11.94 238.76" stroke-dashoffset="-226.76" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<span class="text-[10px] uppercase font-mono text-on-surface-variant">Total Nota</span>
+<span class="text-xl font-bold text-on-surface">1.248</span>
+<span class="text-[9px] text-primary">Pesanan Selesai</span>
+</div>
+</div>
+<div class="space-y-2 mt-4">
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="text-on-surface">Kiloan Reguler</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface font-semibold">44%</span>
+<span class="text-on-surface-variant text-[11px] font-mono">Rp 21.4M</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface">Kiloan Express</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface font-semibold">28%</span>
+<span class="text-on-surface-variant text-[11px] font-mono">Rp 13.6M</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="text-on-surface">Bedcover &amp; Karpet</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface font-semibold">15%</span>
+<span class="text-on-surface-variant text-[11px] font-mono">Rp 7.3M</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="text-on-surface">Sepatu &amp; Tas Premium</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface font-semibold">8%</span>
+<span class="text-on-surface-variant text-[11px] font-mono">Rp 3.9M</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></span>
+<span class="text-on-surface">Dry Clean Suit &amp; Gaun</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-on-surface font-semibold">5%</span>
+<span class="text-on-surface-variant text-[11px] font-mono">Rp 2.4M</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container-highest flex items-center justify-between text-[11px]">
+<span class="text-on-surface-variant">Layanan Profit Tertinggi:</span>
+<span class="text-tertiary font-medium">Sepatu &amp; Tas (Margin 78%)</span>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="text-base font-bold text-on-surface tracking-tight">Heatmap Intensitas Transaksi &amp; Jam Sibuk</h2>
+<p class="text-xs text-on-surface-variant mt-0.5">Membantu optimasi penjadwalan shift operator cuci &amp; pengeringan mesin</p>
+</div>
+<div class="flex items-center gap-3 text-xs">
+<span class="text-on-surface-variant">Frekuensi:</span>
+<div class="flex items-center gap-1.5 font-mono text-[11px]">
+<span class="w-3.5 h-3.5 rounded-sm bg-surface-container-high" title="Rendah"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-secondary-container" title="Sedang"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-primary-container" title="Ramai"></span>
+<span class="w-3.5 h-3.5 rounded-sm bg-primary" title="Puncak Sibuk"></span>
+<span class="text-on-surface pl-1">Puncak Padat</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-8 gap-2 text-center text-xs">
+<div class="text-[11px] font-mono text-on-surface-variant text-left self-center">Jam / Hari</div>
+<div class="font-medium text-on-surface">Senin</div>
+<div class="font-medium text-on-surface">Selasa</div>
+<div class="font-medium text-on-surface">Rabu</div>
+<div class="font-medium text-on-surface">Kamis</div>
+<div class="font-medium text-on-surface">Jumat</div>
+<div class="font-semibold text-primary">Sabtu ★</div>
+<div class="font-semibold text-primary">Minggu ★</div>
+<div class="text-[10px] font-mono text-on-surface-variant text-left self-center">07:00 - 10:00</div>
+<div class="h-8 rounded bg-secondary-container/40 flex items-center justify-center text-[10px] text-on-surface-variant">8</div>
+<div class="h-8 rounded bg-secondary-container/30 flex items-center justify-center text-[10px] text-on-surface-variant">6</div>
+<div class="h-8 rounded bg-secondary-container/50 flex items-center justify-center text-[10px] text-on-surface-variant">9</div>
+<div class="h-8 rounded bg-secondary-container/40 flex items-center justify-center text-[10px] text-on-surface-variant">7</div>
+<div class="h-8 rounded bg-primary-container/70 flex items-center justify-center text-[10px] text-on-surface font-semibold">14</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">34</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">38</div>
+<div class="text-[10px] font-mono text-on-surface-variant text-left self-center">10:00 - 13:00</div>
+<div class="h-8 rounded bg-secondary-container/70 flex items-center justify-center text-[10px] text-on-surface">12</div>
+<div class="h-8 rounded bg-secondary-container/60 flex items-center justify-center text-[10px] text-on-surface">11</div>
+<div class="h-8 rounded bg-secondary-container/50 flex items-center justify-center text-[10px] text-on-surface">10</div>
+<div class="h-8 rounded bg-secondary-container/70 flex items-center justify-center text-[10px] text-on-surface">13</div>
+<div class="h-8 rounded bg-primary-container flex items-center justify-center text-[10px] text-on-primary-container font-semibold">18</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">29</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">31</div>
+<div class="text-[10px] font-mono text-on-surface-variant text-left self-center">13:00 - 16:00</div>
+<div class="h-8 rounded bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">5</div>
+<div class="h-8 rounded bg-secondary-container/30 flex items-center justify-center text-[10px] text-on-surface-variant">7</div>
+<div class="h-8 rounded bg-secondary-container/40 flex items-center justify-center text-[10px] text-on-surface-variant">6</div>
+<div class="h-8 rounded bg-surface-container-high flex items-center justify-center text-[10px] text-on-surface-variant">5</div>
+<div class="h-8 rounded bg-secondary-container/80 flex items-center justify-center text-[10px] text-on-surface">12</div>
+<div class="h-8 rounded bg-primary-container flex items-center justify-center text-[10px] text-on-primary-container font-semibold">19</div>
+<div class="h-8 rounded bg-primary-container flex items-center justify-center text-[10px] text-on-primary-container font-semibold">22</div>
+<div class="text-[10px] font-mono text-on-surface-variant text-left self-center">16:00 - 19:00</div>
+<div class="h-8 rounded bg-primary-container/80 flex items-center justify-center text-[10px] text-on-primary-container font-semibold">16</div>
+<div class="h-8 rounded bg-primary-container/70 flex items-center justify-center text-[10px] text-on-primary-container font-semibold">15</div>
+<div class="h-8 rounded bg-primary-container/80 flex items-center justify-center text-[10px] text-on-primary-container font-semibold">17</div>
+<div class="h-8 rounded bg-primary-container/90 flex items-center justify-center text-[10px] text-on-primary-container font-semibold">18</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">26</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">36</div>
+<div class="h-8 rounded bg-primary text-on-primary font-bold flex items-center justify-center text-[11px] shadow-sm">41</div>
+<div class="text-[10px] font-mono text-on-surface-variant text-left self-center">19:00 - 22:00</div>
+<div class="h-8 rounded bg-secondary-container/50 flex items-center justify-center text-[10px] text-on-surface">9</div>
+<div class="h-8 rounded bg-secondary-container/60 flex items-center justify-center text-[10px] text-on-surface">10</div>
+<div class="h-8 rounded bg-secondary-container/40 flex items-center justify-center text-[10px] text-on-surface">8</div>
+<div class="h-8 rounded bg-secondary-container/70 flex items-center justify-center text-[10px] text-on-surface">11</div>
+<div class="h-8 rounded bg-primary-container/60 flex items-center justify-center text-[10px] text-on-primary-container">14</div>
+<div class="h-8 rounded bg-primary-container/90 flex items-center justify-center text-[10px] text-on-primary-container font-semibold">18</div>
+<div class="h-8 rounded bg-secondary-container/80 flex items-center justify-center text-[10px] text-on-surface">13</div>
+</div>
+<div class="mt-4 p-3 rounded-lg bg-surface-container-low/60 flex items-center justify-between text-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">lightbulb</span>
+<span>Rekomendasi AI: Tambahkan 1 shift packer &amp; setrika pada <strong class="text-on-surface">Sabtu 08:00 - 12:00</strong> untuk mengurangi bottleneck cuci kilat.</span>
+</div>
+<span class="font-mono text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded">Utilisasi 91%</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-5 p-6 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+<h2 class="text-base font-bold text-on-surface tracking-tight">Peringatan Stok Kritis (Bahan Baku)</h2>
+</div>
+<span class="text-[11px] font-mono text-error font-medium">2 Perlu Restock Segera</span>
+</div>
+<div class="space-y-3">
+<div class="p-3.5 rounded-lg bg-surface-container-high/80">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-xs font-semibold text-on-surface">Deterjen Liquid Oxi-Clean Premium</span>
+<span class="text-xs font-mono text-error font-bold">4.5 / 50 Liter</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 9%;"></div>
+</div>
+<div class="flex items-center justify-between mt-2 text-[10px] text-on-surface-variant">
+<span>Batas minimum: 10 Liter</span>
+<span class="text-error">Estimasi habis dalam 1.5 hari</span>
+</div>
+<div class="mt-2.5 flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant">Vendor: PT Kimia Sentosa Abadi</span>
+<button class="px-2.5 py-1 rounded text-[11px] font-medium bg-primary text-on-primary hover:bg-primary-fixed-dim transition-all" type="button">Order Restock 20L</button>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-high/80">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-xs font-semibold text-on-surface">Plastik Packing Seal 35x50 (Baju Kiloan)</span>
+<span class="text-xs font-mono text-error font-bold">1 / 15 Roll</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 7%;"></div>
+</div>
+<div class="flex items-center justify-between mt-2 text-[10px] text-on-surface-variant">
+<span>Batas minimum: 3 Roll</span>
+<span class="text-error">Habis malam ini</span>
+</div>
+<div class="mt-2.5 flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant">Vendor: Mega Plastik Cemerlang</span>
+<button class="px-2.5 py-1 rounded text-[11px] font-medium bg-primary text-on-primary hover:bg-primary-fixed-dim transition-all" type="button">Order Restock 5 Roll</button>
+</div>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<div class="text-xs font-medium text-on-surface">Parfum Soft Lavender &amp; Softener</div>
+<div class="text-[10px] text-on-surface-variant font-mono">Stok Aman: 22.5 Liter (Cukup 18 hari)</div>
+</div>
+</div>
+<span class="text-xs font-mono text-primary font-bold">OK</span>
+</div>
+</div>
+</div>
+<div class="mt-5 p-3 rounded-lg bg-surface-container-low text-[11px] text-on-surface-variant flex items-center justify-between">
+<span>Total Biaya Restock Direkomendasikan:</span>
+<span class="font-mono font-bold text-on-surface">Rp 820.000</span>
+</div>
+</div>
+<div class="lg:col-span-7 p-6 rounded-xl bg-surface-container/70 backdrop-blur-2xl shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="text-base font-bold text-on-surface tracking-tight">Log Arus Kas Terkini (Real-time Cashflow)</h2>
+<p class="text-xs text-on-surface-variant mt-0.5">Audit trail transaksi masuk &amp; keluar Cabang Sudirman</p>
+</div>
+<a class="text-xs text-primary hover:underline font-medium" href="#">Lihat Semua Ledger</a>
+</div>
+<div class="space-y-2.5">
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Penerimaan Kasir POS (Shift Pagi)</div>
+<div class="text-[10px] text-on-surface-variant font-mono">14:15 WIB • Kasir: Rani Oktavia • QRIS &amp; Tunai</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-primary font-mono">+Rp 2.140.000</div>
+<div class="text-[10px] text-on-surface-variant">Pemasukan</div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-secondary-container text-secondary">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Token Listrik PLN 3-Phase Outlet</div>
+<div class="text-[10px] text-on-surface-variant font-mono">11:02 WIB • Auto-Debit BCA Bisnis • Mesin Dryer Industri</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-on-surface font-mono">-Rp 750.000</div>
+<div class="text-[10px] text-on-surface-variant">Utilitas</div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-secondary-container text-secondary">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Pembelian Deterjen Pabrik Drum 60L</div>
+<div class="text-[10px] text-on-surface-variant font-mono">Kemarin 16:30 WIB • PT Kimia Sentosa • Faktur #INV-9921</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-on-surface font-mono">-Rp 1.150.000</div>
+<div class="text-[10px] text-on-surface-variant">Persediaan</div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-tertiary-container text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<div>
+<div class="text-xs font-semibold text-on-surface">Uang Lembur Shift Malam Operator Cuci</div>
+<div class="text-[10px] text-on-surface-variant font-mono">Kemarin 21:00 WIB • Tunai Kas Kecil • 3 Petugas</div>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xs font-bold text-on-surface font-mono">-Rp 350.000</div>
+<div class="text-[10px] text-on-surface-variant">Payroll/SDM</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-highest flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">point_of_sale</span>
+<span class="text-xs text-on-surface">Fisik Kas di Drawer Saat Ini:</span>
+<span class="font-mono text-sm font-bold text-primary">Rp 3.420.000</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary text-xs font-semibold shadow-md flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span>Tutup Kasir Harian &amp; Setor Kas</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container/60 backdrop-blur-xl flex items-center gap-4">
+<div class="p-3 rounded-xl bg-primary-container/40 text-primary">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant">Kecepatan Turnaround Rata-rata</div>
+<div class="text-lg font-bold text-on-surface font-mono">18.4 Jam <span class="text-xs font-normal text-primary">(-3.2 jam)</span></div>
+<div class="text-[10px] text-on-surface-variant">Sangat cepat melampaui SLA 24 jam</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container/60 backdrop-blur-xl flex items-center gap-4">
+<div class="p-3 rounded-xl bg-tertiary-container/40 text-tertiary">
+<span class="material-symbols-outlined text-[24px]">repeat</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant">Repeat Customer Rate</div>
+<div class="text-lg font-bold text-on-surface font-mono">71.8% <span class="text-xs font-normal text-tertiary">(896 Pelanggan)</span></div>
+<div class="text-[10px] text-on-surface-variant">Loyalitas tinggi via program member CRM</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container/60 backdrop-blur-xl flex items-center gap-4">
+<div class="p-3 rounded-xl bg-secondary-container/40 text-secondary">
+<span class="material-symbols-outlined text-[24px]">devices_wearables</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant">Kesehatan Mesin &amp; Uptime IoT</div>
+<div class="text-lg font-bold text-on-surface font-mono">12 / 12 Aktif <span class="text-xs font-normal text-secondary">(100%)</span></div>
+<div class="text-[10px] text-on-surface-variant">Semua washer &amp; dryer berjalan optimal</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initDashboard() {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (this.textContent.includes('Tutup Kasir Harian')) {
+          const confirmed = confirm('Konfirmasi Tutup Kasir Harian senilai Rp 3.420.000 untuk Cabang Sudirman Utama?');
+          if (confirmed) {
+            alert('Kas fisik berhasil ditutup dan slip rekonsiliasi telah dikirim ke WhatsApp Owner!');
+          }
+        }
+      });
+    });
+  })();
+</script></main></div></body></html>
