@@ -66,6 +66,11 @@ export default {
         body: ['Inter', 'sans-serif'],
         label: ['Inter', 'sans-serif'],
       },
+      // Extra opacity steps used by the POS design (bg-surface-container/85, bg-error/15, ...)
+      opacity: {
+        15: '0.15',
+        85: '0.85',
+      },
     },
   },
   plugins: [],

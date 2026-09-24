@@ -1,21 +1,11 @@
 import { useEffect, useState } from 'react'
 import Icon from './Icon'
+import { formatWib } from '../utils/time'
 
 const LOGO_SRC =
   'https://lh3.googleusercontent.com/aida/AEtjO1VRQyiBgSZfxJ5O37Qvy9vurw8KIocdrI8k7ckqJFTKOaK7pg0c9a8Y1lnyLNn1bmn8Lf0sm49EXla2trlaISn5F71B3OxUgU1DzWuUHNQ4B3GQlhlxaMAdkpiDh_KimImRSZ2V90XSGO_pJlDOeJW6MZmN0idRHtJoFm07uzwAnQvLv5kXwW4RZFH-3My86G2Hzts2Xrj19uZfYRhSVRxERX70EcotldM1x8qIGyZYYAYLx5s9pkwECVg'
 const AVATAR_SRC =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuAzb3DZYbDlibbHGlvtwaf3E2o7uwQplmXmdMDfrE3cw3FSUXkcru_CPKrSMUXuLi_SgWgaeDLVQoZUVOJKHMQwRBiM6DTPdkLDqvLMBqfnUl46_9ji5-UIBsEnVtJPN_VbwbfudIyCQqaUxiQcC9sXRRsg_88CcAOENcvXqjnmcoOY1-ZHBzUfhOt2CSj6GTGGCvsMfb6rzUrJHtEQ-t4Q9Cxq1TlQNqpcx9NshQJZveTEf4Fm5Vcw'
-
-function formatWib(date) {
-  const time = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Asia/Jakarta',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  }).format(date)
-  return `${time} WIB`
-}
 
 export default function Header() {
   const [now, setNow] = useState(() => new Date())
