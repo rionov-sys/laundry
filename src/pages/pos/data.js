@@ -191,3 +191,11 @@ export const UNIT_SHORT = { kg: 'Kg', psg: 'Psg', pcs: 'Pcs', set: 'Set', 'm²':
 export function formatRp(value) {
   return `Rp ${Math.round(value).toLocaleString('id-ID')}`
 }
+
+// Pelanggan & kasir aktif di sesi POS (dipakai saat menyimpan pesanan)
+export const ACTIVE_CUSTOMER = {
+  id: 'CUS-8842',
+  name: 'Siti Rahmawati',
+  phone: '0812-9876-5432',
+}
+export const CASHIER_NAME = 'Dian Paramita'

@@ -31,7 +31,15 @@ function qtyLabel(item) {
 }
 
 // Panel nota berjalan: item, kupon, kalkulator total, status & metode bayar
-export default function NotaPanel({ items, onIncrement, onDecrement, onRemove }) {
+export default function NotaPanel({
+  items,
+  onIncrement,
+  onDecrement,
+  onRemove,
+  onSave,
+  saving,
+  orderNumber,
+}) {
   const [now, setNow] = useState(() => new Date())
   const [couponCode, setCouponCode] = useState('MEMBERSEGAR')
   const [couponApplied, setCouponApplied] = useState(true)
@@ -71,7 +79,7 @@ export default function NotaPanel({ items, onIncrement, onDecrement, onRemove })
             <span className="px-2 py-0.5 rounded bg-primary text-on-primary text-[10px] font-mono font-extrabold uppercase tracking-wide">
               NOTA POS
             </span>
-            <span className="text-xs font-mono font-bold text-primary">#GLC-2024-0891</span>
+            <span className="text-xs font-mono font-bold text-primary">#{orderNumber}</span>
           </div>
           <span className="text-[11px] text-on-surface-variant mt-1 flex items-center gap-1">
             <Icon name="account_circle" className="text-[14px]" />
@@ -252,16 +260,28 @@ export default function NotaPanel({ items, onIncrement, onDecrement, onRemove })
       </div>
       <div className="flex flex-col gap-2.5 pt-2">
         <button
-          className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-primary via-primary-fixed-dim to-primary text-on-primary font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-primary/25 hover:brightness-110 active:scale-[0.99] transition-all"
+          className={`w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-primary via-primary-fixed-dim to-primary text-on-primary font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-primary/25 hover:brightness-110 active:scale-[0.99] transition-all ${saving ? 'opacity-60 cursor-wait' : ''}`}
           type="button"
+          disabled={saving}
           onClick={() =>
-            window.alert(
-              'Transaksi #GLC-2024-0891 Berhasil Disimpan!\nStruk thermal sedang dicetak ke printer default.',
-            )
+            onSave({
+              payment_status: status,
+              payment_method: method,
+              coupon_code: couponApplied ? couponCode.trim().toUpperCase() : null,
+              subtotal,
+              discount,
+              rounding,
+              total,
+            })
           }
         >
-          <Icon name="print" className="text-[20px]" />
-          <span>Simpan &amp; Cetak Struk Thermal (58/80mm)</span>
+          <Icon
+            name={saving ? 'autorenew' : 'print'}
+            className={`text-[20px] ${saving ? 'animate-spin' : ''}`}
+          />
+          <span>
+            {saving ? 'Menyimpan ke Supabase...' : 'Simpan & Cetak Struk Thermal (58/80mm)'}
+          </span>
         </button>
         <div className="grid grid-cols-2 gap-2">
           <button
@@ -269,7 +289,7 @@ export default function NotaPanel({ items, onIncrement, onDecrement, onRemove })
             type="button"
             onClick={() =>
               window.alert(
-                'Nota WhatsApp untuk #GLC-2024-0891 dikirim ke Siti Rahmawati (0812-9876-5432).',
+                `Nota WhatsApp untuk #${orderNumber} dikirim ke Siti Rahmawati (0812-9876-5432).`,
               )
             }
           >
@@ -281,7 +301,7 @@ export default function NotaPanel({ items, onIncrement, onDecrement, onRemove })
             type="button"
             onClick={() =>
               window.alert(
-                'Transaksi #GLC-2024-0891 di-hold dan disimpan ke daftar antrian pending.',
+                `Transaksi #${orderNumber} di-hold dan disimpan ke daftar antrian pending.`,
               )
             }
           >

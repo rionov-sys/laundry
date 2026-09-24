@@ -1,14 +1,43 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import CustomerCard from './pos/CustomerCard'
 import ScaleCard from './pos/ScaleCard'
 import ServiceCatalog from './pos/ServiceCatalog'
 import NotaPanel from './pos/NotaPanel'
-import { INITIAL_ITEMS } from './pos/data'
+import OrderHistory from './pos/OrderHistory'
+import { ACTIVE_CUSTOMER, CASHIER_NAME, INITIAL_ITEMS } from './pos/data'
+import { fetchOrders, isSupabaseConfigured, submitOrder } from '../lib/supabase'
+
+function generateOrderNumber() {
+  const year = new Date().getFullYear()
+  return `GLC-${year}-${Math.floor(1000 + Math.random() * 9000)}`
+}
 
 // Halaman Kasir & Transaksi POS — layout 2 kolom sesuai desain (64% katalog / 36% nota)
 export default function PosPage() {
   const [items, setItems] = useState(INITIAL_ITEMS)
   const [scale, setScale] = useState(4.85)
+  const [orderNumber, setOrderNumber] = useState('GLC-2024-0891')
+  const [saving, setSaving] = useState(false)
+  const [orders, setOrders] = useState([])
+  const [ordersLoading, setOrdersLoading] = useState(false)
+  const [ordersError, setOrdersError] = useState('')
+
+  const loadOrders = useCallback(async () => {
+    if (!isSupabaseConfigured) return
+    setOrdersLoading(true)
+    setOrdersError('')
+    try {
+      setOrders(await fetchOrders())
+    } catch (error) {
+      setOrdersError(error.message)
+    } finally {
+      setOrdersLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    loadOrders()
+  }, [loadOrders])
 
   const addToOrder = ({ id, name, rate, unit }) => {
     setItems((prev) => {
@@ -55,21 +84,72 @@ export default function PosPage() {
     window.alert('Bobot IoT 4.85 Kg berhasil dimasukkan ke kalkulator nota Cuci Komplit!')
   }
 
+  // Simpan nota ke Supabase (tabel orders + order_items), lalu segarkan daftar pesanan
+  const saveOrder = async (meta) => {
+    if (!isSupabaseConfigured) {
+      window.alert(
+        'Supabase belum terkonfigurasi. Isi VITE_SUPABASE_URL dan VITE_SUPABASE_ANON_KEY di file .env lalu jalankan ulang npm run dev.',
+      )
+      return
+    }
+    if (items.length === 0) {
+      window.alert(
+        'Nota masih kosong. Tambahkan layanan dari katalog terlebih dahulu sebelum menyimpan pesanan.',
+      )
+      return
+    }
+    setSaving(true)
+    try {
+      await submitOrder(
+        {
+          order_number: orderNumber,
+          customer_id: ACTIVE_CUSTOMER.id,
+          customer_name: ACTIVE_CUSTOMER.name,
+          customer_phone: ACTIVE_CUSTOMER.phone,
+          cashier_name: CASHIER_NAME,
+          ...meta,
+        },
+        items,
+      )
+      window.alert(
+        `Transaksi #${orderNumber} Berhasil Disimpan!\nStruk thermal sedang dicetak ke printer default.\nData tersimpan di Supabase.`,
+      )
+      setItems([])
+      setOrderNumber(generateOrderNumber())
+      loadOrders()
+    } catch (error) {
+      window.alert(`Gagal menyimpan pesanan: ${error.message}`)
+    } finally {
+      setSaving(false)
+    }
+  }
+
   return (
-    <div className="flex flex-col lg:flex-row gap-6 items-start w-full relative">
-      <div className="w-full lg:w-[64%] flex flex-col gap-6">
-        <CustomerCard />
-        <ScaleCard scale={scale} onTare={tare} onInputBobot={inputBobot} />
-        <ServiceCatalog onAdd={addToOrder} />
+    <div className="flex flex-col gap-6 w-full relative">
+      <div className="flex flex-col lg:flex-row gap-6 items-start w-full relative">
+        <div className="w-full lg:w-[64%] flex flex-col gap-6">
+          <CustomerCard />
+          <ScaleCard scale={scale} onTare={tare} onInputBobot={inputBobot} />
+          <ServiceCatalog onAdd={addToOrder} />
+        </div>
+        <div className="w-full lg:w-[36%] flex flex-col gap-5 sticky top-20">
+          <NotaPanel
+            items={items}
+            onIncrement={(id) => changeQty(id, 1)}
+            onDecrement={(id) => changeQty(id, -1)}
+            onRemove={removeItem}
+            onSave={saveOrder}
+            saving={saving}
+            orderNumber={orderNumber}
+          />
+        </div>
       </div>
-      <div className="w-full lg:w-[36%] flex flex-col gap-5 sticky top-20">
-        <NotaPanel
-          items={items}
-          onIncrement={(id) => changeQty(id, 1)}
-          onDecrement={(id) => changeQty(id, -1)}
-          onRemove={removeItem}
-        />
-      </div>
+      <OrderHistory
+        orders={orders}
+        loading={ordersLoading}
+        error={ordersError}
+        onRefresh={loadOrders}
+      />
     </div>
   )
 }
